@@ -1,4 +1,6 @@
 from ncclient import manager
+import sys
+import xml.dom.minidom
 
 sandboxURL = "sandbox-iosxe-recomm-1.cisco.com"
 sandboxPort = "830"
@@ -12,11 +14,12 @@ router = {
     "password": sandboxPass
 }
 
-with manager.connect(
+m = manager.connect(
     host=router["host"],
     port=router["port"],
     username=router["username"],
     password=router["password"],
     hostkey_verify=False
-) as m:
-    m.close_session()
+)
+
+m.close_session()
