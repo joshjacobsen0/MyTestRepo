@@ -23,3 +23,17 @@ m = manager.connect(
 )
 
 m.close_session()
+
+{
+    "ietf-interfaces:interface": {
+        "name": "Loopback100",
+        "description": "Adding loopback100",
+        "type": "iana-if-type:softwareLoopback",
+        "enabled": "true",
+        "ietf-ip:ipv4": {
+            "ip": "192.168.1.100",
+            "netmask": "255.255.255.255"
+        }
+
+    }
+}
